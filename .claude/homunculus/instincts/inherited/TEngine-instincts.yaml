@@ -1,0 +1,474 @@
+# Instincts generated from https://github.com/wumohai/TEngine
+# Generated: 2026-03-02T02:59:13.565Z
+# Version: 2.0
+
+---
+id: TEngine-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Commit Length
+
+## Action
+
+Keep commit messages concise (under 50 characters)
+
+## Evidence
+
+- Average commit message length: 33 chars
+- Based on 200 commits
+
+---
+id: TEngine-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: TEngine-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: TEngine-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: TEngine-workflow-test-driven-development
+trigger: "when adding new functionality"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Workflow Test Driven Development
+
+## Action
+
+Follow the test-driven-development workflow:
+1. Write failing test
+2. Implement code to pass test
+3. Refactor if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: **/*.test.*, **/*.spec.*, src/**/*
+
+---
+id: TEngine-workflow-build-artifacts-cleanup
+trigger: "when doing build artifacts cleanup"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Workflow Build Artifacts Cleanup
+
+## Action
+
+Follow the build-artifacts-cleanup workflow:
+1. Update .gitignore with build patterns
+2. Remove bin/ and obj/ directories
+3. Remove generated .deps.json, .dll, .pdb files
+4. Remove NuGet cache and project files
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: .gitignore, Tools/GameEventSourceGenerator/**/bin/**, Tools/GameEventSourceGenerator/**/obj/**
+
+---
+id: TEngine-workflow-ui-script-generator-improvements
+trigger: "when doing ui script generator improvements"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Workflow Ui Script Generator Improvements
+
+## Action
+
+Follow the ui-script-generator-improvements workflow:
+1. Modify ScriptAutoGenerator.cs
+2. Update ScriptGenerator.cs if needed
+3. Update ScriptGeneratorSetting.cs for new rules
+4. Test generation with new components
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: UnityProject/Assets/Editor/UIScriptGenerator/ScriptAutoGenerator.cs, UnityProject/Assets/Editor/UIScriptGenerator/ScriptGenerator.cs, UnityProject/Assets/Editor/UIScriptGenerator/ScriptGeneratorSetting.cs
+
+---
+id: TEngine-workflow-game-event-system-development
+trigger: "when doing game event system development"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Workflow Game Event System Development
+
+## Action
+
+Follow the game-event-system-development workflow:
+1. Update EventMgr.cs core logic
+2. Modify EventInterfaceAttribute.cs
+3. Update SourceGenerator.dll
+4. Build and deploy new analyzer DLLs
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: UnityProject/Assets/TEngine/Runtime/Core/GameEvent/EventMgr.cs, UnityProject/Assets/TEngine/Runtime/Core/GameEvent/EventInterfaceAttribute.cs, UnityProject/Assets/TEngine/Runtime/Core/GameEvent/SourceGenerator.dll
+
+---
+id: TEngine-workflow-pull-request-merge
+trigger: "when doing pull request merge"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Workflow Pull Request Merge
+
+## Action
+
+Follow the pull-request-merge workflow:
+1. Review pull request changes
+2. Merge with main branch
+3. Update affected core files
+4. Ensure build artifacts are properly handled
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: Various files depending on PR content
+
+---
+id: TEngine-workflow-csharp-project-build
+trigger: "when doing csharp project build"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wumohai/TEngine
+---
+
+# TEngine Workflow Csharp Project Build
+
+## Action
+
+Follow the csharp-project-build workflow:
+1. Compile source code
+2. Generate .dll files
+3. Create .deps.json files
+4. Generate .pdb debug files
+5. Update project assets and cache
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: Tools/GameEventSourceGenerator/**/bin/**, Tools/GameEventSourceGenerator/**/obj/**, *.dll
+
+---
+id: tengine-pascal-case-files
+trigger: "When creating or naming files"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Pascal Case Files
+
+## Action
+
+Use PascalCase naming convention for file names
+
+## Evidence
+
+- Pattern in UnityProject structure
+- EventMgr.cs, ScriptAutoGenerator.cs examples
+
+---
+id: tengine-camel-case-functions
+trigger: "When naming functions or methods"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Camel Case Functions
+
+## Action
+
+Use camelCase naming convention for function names
+
+## Evidence
+
+- JavaScript/C# mixed codebase patterns
+- Inferred from language analysis
+
+---
+id: tengine-screaming-snake-constants
+trigger: "When defining constants"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Screaming Snake Constants
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Standard pattern detected in codeStyle analysis
+
+---
+id: tengine-mixed-imports
+trigger: "When importing modules or dependencies"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Mixed Imports
+
+## Action
+
+Use mixed import styles based on context and file type
+
+## Evidence
+
+- Mixed import style pattern in analysis
+
+---
+id: tengine-freeform-commits
+trigger: "When making commits"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Freeform Commits
+
+## Action
+
+Use descriptive freeform commit messages averaging 33 characters, supporting both English and Chinese
+
+## Evidence
+
+- Update README.md
+- 增加自动绑定UIBindComponent组件找不到错误提示
+- 事件系统优化，EventMgr的字典key改成Type类型
+
+---
+id: tengine-clean-build-artifacts
+trigger: "When build artifacts accumulate in version control"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Clean Build Artifacts
+
+## Action
+
+Update .gitignore and remove bin/, obj/, .dll, .pdb, and .deps.json files
+
+## Evidence
+
+- 把C#项目中的obj、bin、.idea相关文件添加到.gitignore中
+- Frequent cleanup pattern with 3x/month frequency
+
+---
+id: tengine-enhance-ui-generator
+trigger: "When UI script generation needs improvement"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Enhance Ui Generator
+
+## Action
+
+Modify ScriptAutoGenerator.cs, update related generator files, and test with new components
+
+## Evidence
+
+- 增加自动绑定UIBindComponent组件找不到错误提示
+- 5x/month frequency pattern
+
+---
+id: tengine-optimize-event-system
+trigger: "When event system performance or functionality needs enhancement"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Optimize Event System
+
+## Action
+
+Update EventMgr.cs core logic, modify attributes, and rebuild SourceGenerator.dll
+
+## Evidence
+
+- 事件系统优化，EventMgr的字典key改成Type类型，实现真正0GC分配
+- 删除EventInterfaceAttribute的Obfuz标记
+
+---
+id: tengine-merge-pull-requests
+trigger: "When pull requests from contributors are ready for integration"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Merge Pull Requests
+
+## Action
+
+Review changes, merge with main branch, and ensure build artifacts are handled properly
+
+## Evidence
+
+- Merge pull request #227 from AzureBubble/main
+- Merge pull request #226 from AzureBubble/main
+- 8x/month frequency
+
+---
+id: tengine-build-csharp-tools
+trigger: "When GameEventSourceGenerator tools need compilation"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Build Csharp Tools
+
+## Action
+
+Compile source code and generate .dll, .pdb, and .deps.json artifacts in Tools directory
+
+## Evidence
+
+- Tools/GameEventSourceGenerator build patterns
+- 4x/month frequency
+- Multiple .dll and build artifact commits
+
+---
+id: tengine-sync-encryption-config
+trigger: "When packaging tools need encryption service configuration"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Sync Encryption Config
+
+## Action
+
+Configure encryption services based on ResourceDriver settings instead of YooassetBuilder settings
+
+## Evidence
+
+- 优化打包工具，不再是根据YooassetBuilder里的设置去创建加密服务，而是根据ResourceDriver里的设置去创建，同步加密和解密服务的配置
+
+---
+id: tengine-unity-package-structure
+trigger: "When organizing Unity project structure"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: wumohai/TEngine
+---
+
+# Tengine Unity Package Structure
+
+## Action
+
+Use single-package layout with UnityProject as main folder and separate test locations
+
+## Evidence
+
+- UnityProject folder structure
+- Separate package.json files in Assets/TEngine and Packages
+
